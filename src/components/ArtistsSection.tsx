@@ -33,10 +33,10 @@ const ArtistsSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl gradient-text mb-4 tracking-tight">
+          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl gradient-text mb-4 tracking-tight text-center">
             Artistas
           </h2>
-          <p className="text-muted-foreground font-body text-base sm:text-lg mb-12 max-w-2xl">
+          <p className="text-muted-foreground font-body text-base sm:text-lg mb-12 max-w-2xl mx-auto text-center">
             Las voces que no aparecen en los libros pero que resuenan en el pueblo.
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ const ArtistsSection = () => {
         </div>
 
         {/* Spotify embeds */}
-        <div className="space-y-8 max-w-2xl">
+        <div className="space-y-8 max-w-2xl mx-auto">
           <div>
             <h3 className="font-display font-bold text-lg text-foreground mb-4">🎵 Conoce a lxs artistas</h3>
             <div className="bg-card border border-border p-4 rounded-sm">
