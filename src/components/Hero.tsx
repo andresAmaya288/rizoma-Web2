@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroBg}
-          alt="Rizoma - red rizomática abstracta"
+          alt="Rizoma - red horizontal de conexiones abstractas"
           className="w-full h-full object-cover opacity-60"
           loading="eager"
         />

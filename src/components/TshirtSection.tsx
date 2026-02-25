@@ -42,16 +42,16 @@ const TshirtSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl gradient-text mb-4 tracking-tight">
+          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl gradient-text mb-4 tracking-tight text-center">
             Camisetas
           </h2>
-          <p className="text-muted-foreground font-body text-base sm:text-lg mb-12 max-w-2xl">
+          <p className="text-muted-foreground font-body text-base sm:text-lg mb-12 max-w-2xl mx-auto text-center">
             Lleva el rizoma contigo. Reserva sin compromiso, recoge en el evento.
           </p>
         </motion.div>
 
         {/* T-shirt models */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-4xl">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
           {models.map((model, i) => (
             <motion.div
               key={i}
@@ -86,7 +86,7 @@ const TshirtSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-md"
+          className="max-w-md mx-auto"
         >
           <h3 className="font-display font-bold text-xl text-foreground mb-6">Reservar camiseta</h3>
           <form onSubmit={handleSubmit} className="space-y-4">

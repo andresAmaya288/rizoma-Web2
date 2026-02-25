@@ -17,16 +17,16 @@ const EventSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl gradient-text mb-4 tracking-tight">
+          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl gradient-text mb-4 tracking-tight text-center">
             El evento
           </h2>
-          <p className="text-muted-foreground font-body text-base sm:text-lg mb-12 max-w-2xl">
+          <p className="text-muted-foreground font-body text-base sm:text-lg mb-12 max-w-2xl mx-auto text-center">
             Una jornada completa de cultura, comunidad y celebración.
           </p>
         </motion.div>
 
         {/* Info cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-2xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -52,7 +52,7 @@ const EventSection = () => {
         </div>
 
         {/* Schedule */}
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-2xl mx-auto mb-12">
           <h3 className="font-display font-bold text-xl text-foreground mb-6">Programación</h3>
           <div className="space-y-3">
             {schedule.map((item, i) => (
@@ -80,7 +80,7 @@ const EventSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 max-w-2xl"
+          className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto"
         >
           <div className="flex items-center gap-3 bg-muted/50 border border-border px-5 py-3 font-body text-sm text-foreground/80">
             <span>🍽️</span> Comida y bebida a precios populares
