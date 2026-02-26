@@ -6,7 +6,9 @@ const FooterSection = () => {
           {/* Social links */}
           <div className="flex justify-center gap-6 mb-8">
             <a
-              href="#"
+              href="https://www.instagram.com/rizoma.moron/"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="text-muted-foreground hover:text-primary transition-colors font-body text-sm uppercase tracking-wider"
             >
@@ -18,13 +20,6 @@ const FooterSection = () => {
               className="text-muted-foreground hover:text-primary transition-colors font-body text-sm uppercase tracking-wider"
             >
               Twitter / X
-            </a>
-            <a
-              href="#"
-              aria-label="Telegram"
-              className="text-muted-foreground hover:text-primary transition-colors font-body text-sm uppercase tracking-wider"
-            >
-              Telegram
             </a>
           </div>
 

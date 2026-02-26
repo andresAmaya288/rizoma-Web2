@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
+import { z } from "zod";
 
 import tshirt1Front from "@/assets/tshirt-1-front.jpg";
 import tshirt1Back from "@/assets/tshirt-1-back.jpg";
@@ -17,10 +18,21 @@ const models = [
   { name: "Rizoma Verde", front: tshirt3Front, back: tshirt3Back },
 ];
 
+const reservaSchema = z.object({
+  nombre: z.string().trim().min(1, "El nombre es obligatorio").max(100, "Máx. 100 caracteres"),
+  email: z.string().trim().email("Introduce un email válido").max(255),
+  modelo: z.string(),
+  talla: z.string(),
+  cantidad: z.string(),
+});
+
+type FormErrors = Partial<Record<keyof z.infer<typeof reservaSchema>, string>>;
+
 const TshirtSection = () => {
   const [flipped, setFlipped] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [confirmed, setConfirmed] = useState<string | null>(null);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [form, setForm] = useState({
     nombre: "",
     email: "",
@@ -29,8 +41,28 @@ const TshirtSection = () => {
     cantidad: "1",
   });
 
+  const updateField = (field: string, value: string) => {
+    setForm({ ...form, [field]: value });
+    if (errors[field as keyof FormErrors]) {
+      setErrors({ ...errors, [field]: undefined });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const result = reservaSchema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors: FormErrors = {};
+      result.error.errors.forEach((err) => {
+        const field = err.path[0] as keyof FormErrors;
+        if (!fieldErrors[field]) fieldErrors[field] = err.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
+    setErrors({});
     setSubmitting(true);
 
     const formData = {
@@ -60,6 +92,11 @@ const TshirtSection = () => {
       setSubmitting(false);
     }
   };
+
+  const inputClass = (field: keyof FormErrors) =>
+    `w-full bg-card border px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition-colors ${
+      errors[field] ? "border-destructive focus:border-destructive" : "border-border focus:border-primary"
+    }`;
 
   return (
     <section id="camisetas" className="py-24 md:py-32 relative">
@@ -133,26 +170,30 @@ const TshirtSection = () => {
             </div>
           ) : (
             <>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Nombre"
-                  required
-                  value={form.nombre}
-                  onChange={(e) => setForm({ ...form, nombre: e.target.value })}
-                  className="w-full bg-card border border-border px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-card border border-border px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                />
+              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Nombre"
+                    value={form.nombre}
+                    onChange={(e) => updateField("nombre", e.target.value)}
+                    className={inputClass("nombre")}
+                  />
+                  {errors.nombre && <p className="text-destructive text-xs font-body mt-1">{errors.nombre}</p>}
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={form.email}
+                    onChange={(e) => updateField("email", e.target.value)}
+                    className={inputClass("email")}
+                  />
+                  {errors.email && <p className="text-destructive text-xs font-body mt-1">{errors.email}</p>}
+                </div>
                 <select
                   value={form.modelo}
-                  onChange={(e) => setForm({ ...form, modelo: e.target.value })}
+                  onChange={(e) => updateField("modelo", e.target.value)}
                   className="w-full bg-card border border-border px-4 py-3 font-body text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                 >
                   {models.map((m) => (
@@ -162,7 +203,7 @@ const TshirtSection = () => {
                 <div className="flex gap-4">
                   <select
                     value={form.talla}
-                    onChange={(e) => setForm({ ...form, talla: e.target.value })}
+                    onChange={(e) => updateField("talla", e.target.value)}
                     className="flex-1 bg-card border border-border px-4 py-3 font-body text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                   >
                     {["S", "M", "L", "XL"].map((t) => (
@@ -171,7 +212,7 @@ const TshirtSection = () => {
                   </select>
                   <select
                     value={form.cantidad}
-                    onChange={(e) => setForm({ ...form, cantidad: e.target.value })}
+                    onChange={(e) => updateField("cantidad", e.target.value)}
                     className="w-24 bg-card border border-border px-4 py-3 font-body text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                   >
                     {[1, 2, 3, 4, 5].map((n) => (

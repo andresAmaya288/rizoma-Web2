@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const schedule = [
   { time: "Todo el día", event: "Mercadillo local", icon: "🛍️" },
@@ -8,8 +9,12 @@ const schedule = [
 ];
 
 const EventSection = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [30, -30]);
+
   return (
-    <section id="evento" className="py-24 md:py-32 relative">
+    <section id="evento" ref={ref} className="py-24 md:py-32 relative">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -25,8 +30,8 @@ const EventSection = () => {
           </p>
         </motion.div>
 
-        {/* Info cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto">
+        {/* Info cards with parallax */}
+        <motion.div style={{ y }} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -49,11 +54,11 @@ const EventSection = () => {
             <p className="font-display font-bold text-lg text-foreground">4 de abril</p>
             <p className="text-muted-foreground font-body text-sm">De día a noche</p>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Schedule */}
         <div className="max-w-2xl mx-auto mb-12">
-          <h3 className="font-display font-bold text-xl text-foreground mb-6">Programación</h3>
+          <h3 className="font-display font-bold text-xl text-foreground mb-6 text-center">Programación</h3>
           <div className="space-y-3">
             {schedule.map((item, i) => (
               <motion.div
