@@ -1,25 +1,17 @@
 import { motion } from "framer-motion";
+import kp530Img from "@/assets/kp530.png";
+import oihanImg from "@/assets/oihan.jpg";
 
 const artists = [
   {
-    name: "Artista 1",
-    bio: "Sonidos electrónicos que desdibujan fronteras entre lo orgánico y lo digital.",
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop",
+    name: "KP530",
+    bio: "Rap crudo y directo desde las calles. Letras que golpean con la honestidad de quien ha vivido lo que cuenta.",
+    image: kp530Img,
   },
   {
-    name: "Artista 2",
-    bio: "Poesía sonora desde los márgenes, versos que se bailan y silencios que se escuchan.",
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=400&fit=crop",
-  },
-  {
-    name: "Artista 3",
-    bio: "Beats crudos y melodías encontradas en la calle. El underground como lengua materna.",
-    image: "https://images.unsplash.com/photo-1508854710579-5cecc3a9ff17?w=400&h=400&fit=crop",
-  },
-  {
-    name: "Artista 4",
-    bio: "Fusión de raíces flamencas con texturas contemporáneas. Tradición hecha futuro.",
-    image: "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=400&h=400&fit=crop",
+    name: "Oihan",
+    bio: "Versos afilados y flow contundente. Una voz que rompe moldes y construye puentes entre lo urbano y lo poético.",
+    image: oihanImg,
   },
 ];
 
@@ -42,14 +34,14 @@ const ArtistsSection = () => {
         </motion.div>
 
         {/* Artist grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16 max-w-2xl mx-auto">
           {artists.map((artist, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
               className="group"
             >
               <div className="relative overflow-hidden mb-4 aspect-square">
@@ -78,7 +70,7 @@ const ArtistsSection = () => {
             <div className="bg-card border border-border p-4 rounded-sm">
               <iframe
                 title="Conoce a lxs artistas - Playlist Spotify"
-                src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?theme=0"
+                src="https://open.spotify.com/embed/playlist/1Zy3LB0vvr5k2S5hqz5tcK?theme=0"
                 width="100%"
                 height="152"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -92,7 +84,7 @@ const ArtistsSection = () => {
             <div className="bg-card border border-border p-4 rounded-sm">
               <iframe
                 title="Warm up Rizoma - Playlist Spotify"
-                src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4sWSpwq3LiO?theme=0"
+                src="https://open.spotify.com/embed/playlist/4jgcq8MwENRHUjzTPuR1mE?theme=0"
                 width="100%"
                 height="152"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"

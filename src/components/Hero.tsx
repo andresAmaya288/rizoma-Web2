@@ -94,7 +94,7 @@ const Hero = () => {
           </span>
           <span className="hidden sm:block text-border">|</span>
           <span className="flex items-center gap-2">
-            <span className="text-primary">📍</span> Módulo Azul, Morón de la Frontera
+            <span className="text-primary">📍</span> CSO Julio Vélez, Morón de la Frontera
           </span>
         </motion.div>
 
