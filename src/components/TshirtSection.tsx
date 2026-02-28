@@ -229,7 +229,7 @@ const TshirtSection = () => {
                 </button>
               </form>
               <p className="text-muted-foreground text-xs font-body mt-3">
-                Reserva sin pago. Recogida en el evento.
+                Reserva sin pago. Recogida y pago <span className="text-secondary font-medium">en efectivo</span> en el evento.
               </p>
             </>
           )}

@@ -34,8 +34,8 @@ const MapSection = () => {
       .addTo(map)
       .bindPopup(
         `<div style="font-family:'Space Grotesk',sans-serif;text-align:center;padding:4px">
-          <strong style="font-family:'Syne',sans-serif">Módulo Azul</strong><br/>
-          <span style="font-size:12px;color:#888">Morón de la Frontera</span><br/>
+          <strong style="font-family:'Syne',sans-serif">CSO Julio Vélez</strong><br/>
+          <span style="font-size:12px;color:#888">Pasaje Ote., Morón de la Frontera</span><br/>
           <a href="https://maps.app.goo.gl/ZKzKJEkDE9WRhbiU8" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:hsl(82 100% 50%)">Abrir en Google Maps →</a>
         </div>`
       );
@@ -49,24 +49,24 @@ const MapSection = () => {
   }, []);
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto"
+          className="max-w-2xl mx-auto"
         >
           <h3 className="font-display font-bold text-xl sm:text-2xl text-foreground mb-2 text-center">
             📍 Cómo llegar
           </h3>
-          <p className="text-muted-foreground font-body text-sm mb-6 text-center">
-            Módulo Azul, Morón de la Frontera
+          <p className="text-muted-foreground font-body text-sm mb-4 text-center">
+            CSO Julio Vélez — Pasaje Ote., Morón de la Frontera
           </p>
           <div
             ref={mapRef}
-            className="w-full h-[300px] sm:h-[400px] border border-border overflow-hidden"
+            className="w-full h-[220px] sm:h-[280px] border border-border overflow-hidden"
             style={{ borderRadius: "var(--radius)" }}
           />
           <p className="text-center mt-3">

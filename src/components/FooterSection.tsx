@@ -14,13 +14,6 @@ const FooterSection = () => {
             >
               Instagram
             </a>
-            <a
-              href="#"
-              aria-label="Twitter"
-              className="text-muted-foreground hover:text-primary transition-colors font-body text-sm uppercase tracking-wider"
-            >
-              Twitter / X
-            </a>
           </div>
 
           {/* Evocative message */}
