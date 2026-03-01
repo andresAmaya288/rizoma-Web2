@@ -9,10 +9,10 @@ import TshirtSection from "@/components/TshirtSection";
 import FooterSection from "@/components/FooterSection";
 
 const navLinks = [
-  { label: "Sobre", href: "#sobre" },
+  { label: "Quiénes somos", href: "#sobre" },
   { label: "Evento", href: "#evento" },
   { label: "Artistas", href: "#artistas" },
-  { label: "Camisetas", href: "#camisetas" },
+  // { label: "Camisetas", href: "#camisetas" },
 ];
 
 const Index = () => {
@@ -102,7 +102,8 @@ const Index = () => {
       <EventSection />
       <ArtistsSection />
       <MapSection />
-      <TshirtSection />
+      {/* TshirtSection oculta temporalmente — descomentar para activar */}
+      {/* <TshirtSection /> */}
       <FooterSection />
     </main>
   );

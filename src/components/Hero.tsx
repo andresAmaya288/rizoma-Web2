@@ -1,32 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 
-const TARGET_DATE = new Date("2025-04-04T18:00:00").getTime();
-
-const useCountdown = () => {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    const tick = () => {
-      const diff = Math.max(0, TARGET_DATE - Date.now());
-      setTimeLeft({
-        days: Math.floor(diff / 86400000),
-        hours: Math.floor((diff % 86400000) / 3600000),
-        minutes: Math.floor((diff % 3600000) / 60000),
-        seconds: Math.floor((diff % 60000) / 1000),
-      });
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  return timeLeft;
-};
-
 const Hero = () => {
-  const countdown = useCountdown();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
@@ -59,30 +35,6 @@ const Hero = () => {
           </p>
         </motion.div>
 
-        {/* Countdown */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="flex justify-center gap-4 sm:gap-6 mb-8"
-        >
-          {[
-            { value: countdown.days, label: "días" },
-            { value: countdown.hours, label: "hrs" },
-            { value: countdown.minutes, label: "min" },
-            { value: countdown.seconds, label: "seg" },
-          ].map((unit) => (
-            <div key={unit.label} className="text-center">
-              <div className="font-display font-extrabold text-2xl sm:text-4xl gradient-text leading-none">
-                {String(unit.value).padStart(2, "0")}
-              </div>
-              <div className="font-body text-xs text-muted-foreground uppercase tracking-wider mt-1">
-                {unit.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -94,7 +46,7 @@ const Hero = () => {
           </span>
           <span className="hidden sm:block text-border">|</span>
           <span className="flex items-center gap-2">
-            <span className="text-primary">📍</span> CSO Julio Vélez, Morón de la Frontera
+            <span className="text-primary">📍</span> Módulo Azul, Morón de la Frontera
           </span>
         </motion.div>
 
@@ -123,16 +75,6 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <div className="w-5 h-8 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-1">
-          <div className="w-1 h-2 bg-primary rounded-full" />
-        </div>
-      </motion.div>
     </section>
   );
 };

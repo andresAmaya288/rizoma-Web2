@@ -66,10 +66,10 @@ const ArtistsSection = () => {
         {/* Spotify embeds */}
         <div className="space-y-8 max-w-2xl mx-auto">
           <div>
-            <h3 className="font-display font-bold text-lg text-foreground mb-4">🎵 Conoce a lxs artistas</h3>
+            <h3 className="font-display font-bold text-lg text-foreground mb-4">🎵 Conoce a los artistas</h3>
             <div className="bg-card border border-border p-4 rounded-sm">
               <iframe
-                title="Conoce a lxs artistas - Playlist Spotify"
+                title="Conoce a los artistas - Playlist Spotify"
                 src="https://open.spotify.com/embed/playlist/1Zy3LB0vvr5k2S5hqz5tcK?theme=0"
                 width="100%"
                 height="152"

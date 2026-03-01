@@ -64,7 +64,7 @@ const EventSection = () => {
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="overflow-hidden"
               >
-                <div className="relative border-l-2 border-primary/40 pl-6 sm:pl-10 pt-4 pb-2">
+                <div className="relative border-l-2 border-primary/40 pl-6 sm:pl-10 pt-4 pb-4 ml-1">
                   <div className="absolute -left-[5px] top-4 w-2 h-2 bg-primary rounded-full" />
                   <p className="font-body text-foreground/75 text-sm sm:text-base leading-relaxed mb-4">
                     En un mundo cada vez más homogéneo, donde el avance quimérico del neoliberalismo
@@ -90,7 +90,7 @@ const EventSection = () => {
                   <p className="font-body text-primary/90 text-sm sm:text-base leading-relaxed italic">
                     Si algo de esto resuena contigo o si simplemente tienes curiosidad, o si te
                     apetece pasar un buen rato con buena gente, estáis invitados a formar parte del
-                    florecimiento de esta plataforma el 4 de Abril en el CSO Julio Vélez en nuestra
+                    florecimiento de esta plataforma el 4 de Abril en el Módulo Azul en nuestra
                     fiesta de la primavera.
                   </p>
                   <div className="absolute -left-[5px] bottom-2 w-2 h-2 bg-secondary rounded-full" />
@@ -110,7 +110,7 @@ const EventSection = () => {
             className="bg-card border border-border p-6 border-glow"
           >
             <span className="text-2xl mb-2 block">📍</span>
-            <p className="font-display font-bold text-lg text-foreground">CSO Julio Vélez</p>
+            <p className="font-display font-bold text-lg text-foreground">Módulo Azul</p>
             <p className="text-muted-foreground font-body text-sm">Pasaje Ote., Morón de la Frontera</p>
           </motion.div>
           <motion.div
@@ -121,7 +121,7 @@ const EventSection = () => {
             className="bg-card border border-border p-6 border-glow"
           >
             <span className="text-2xl mb-2 block">📅</span>
-            <p className="font-display font-bold text-lg text-foreground">4 de abril</p>
+            <p className="font-display font-bold text-lg text-foreground">4 de abril de 2026</p>
             <p className="text-muted-foreground font-body text-sm">De día a noche</p>
           </motion.div>
         </motion.div>
