@@ -111,7 +111,7 @@ const TshirtSection = () => {
             Camisetas
           </h2>
           <p className="text-muted-foreground font-body text-base sm:text-lg mb-12 max-w-2xl mx-auto text-center">
-            Lleva el rizoma contigo. Reserva sin compromiso, recoge en el evento.
+            Lleva el rizoma contigo. Recoge y paga en efectivo en el evento.
           </p>
         </motion.div>
 
@@ -229,7 +229,7 @@ const TshirtSection = () => {
                 </button>
               </form>
               <p className="text-muted-foreground text-xs font-body mt-3">
-                Reserva sin pago. Recogida y pago <span className="text-secondary font-medium">en efectivo</span> en el evento.
+                Recogida y pago <span className="text-secondary font-medium">en efectivo</span> en el evento.
               </p>
             </>
           )}

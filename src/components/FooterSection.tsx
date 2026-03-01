@@ -31,7 +31,7 @@ const FooterSection = () => {
           </div>
 
           <p className="text-muted-foreground/40 font-body text-xs">
-            Cultura viva desde abajo · Morón de la Frontera · 2025
+            Cultura viva desde abajo · Morón de la Frontera · 2026
           </p>
         </div>
       </div>
