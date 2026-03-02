@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
+import { Plus } from "lucide-react";
 import kp530Img from "@/assets/kp530.png";
 import oihanImg from "@/assets/oihan.jpg";
 import lgndImg from "@/assets/lgnd.jpg";
+import coverArtistas from "@/assets/cover-artistas.jpg";
+import coverWarmup from "@/assets/cover-warmup.jpg";
 
 const artists = [
   {
     name: "KP530",
     bio: "Rap crudo y directo desde las calles. Letras que golpean con la honestidad de quien ha vivido lo que cuenta.",
     image: kp530Img,
-    confirmed: true,
   },
   {
     name: "Oihan",
     bio: "Versos afilados y flow contundente. Una voz que rompe moldes y construye puentes entre lo urbano y lo poético.",
     image: oihanImg,
-    confirmed: true,
   },
   {
     name: "LGND",
     bio: "Melodías que se te clavan y barras que no piden permiso. Una propuesta fresca donde lo callejero se encuentra con lo melódico.",
     image: lgndImg,
-    confirmed: false,
   },
 ];
 
@@ -43,7 +43,7 @@ const ArtistsSection = () => {
         </motion.div>
 
         {/* Artist grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8 mb-16 max-w-4xl mx-auto">
           {artists.map((artist, i) => (
             <motion.div
               key={i}
@@ -61,11 +61,6 @@ const ArtistsSection = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                {!artist.confirmed && (
-                  <span className="absolute top-2 right-2 bg-accent/80 text-accent-foreground text-[10px] font-display font-bold uppercase tracking-widest px-2 py-0.5 rounded-sm backdrop-blur-sm border border-accent/40">
-                    Por confirmar
-                  </span>
-                )}
               </div>
               <h3 className="font-display font-bold text-lg text-foreground group-hover:text-primary transition-colors">
                 {artist.name}
@@ -75,13 +70,40 @@ const ArtistsSection = () => {
               </p>
             </motion.div>
           ))}
+
+          {/* Coming soon card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: artists.length * 0.15 }}
+            className="group"
+          >
+            <div className="relative overflow-hidden mb-4 aspect-square border border-dashed border-primary/30 flex flex-col items-center justify-center bg-card/30 backdrop-blur-sm">
+              <div className="w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center mb-3 group-hover:border-primary/70 transition-colors">
+                <Plus className="w-6 h-6 text-primary/60 group-hover:text-primary transition-colors" />
+              </div>
+              <span className="font-display font-bold text-sm text-primary/60 group-hover:text-primary transition-colors tracking-wide uppercase">
+                Próximamente
+              </span>
+            </div>
+            <h3 className="font-display font-bold text-lg text-muted-foreground/50">
+              Y más…
+            </h3>
+            <p className="text-muted-foreground/40 text-sm font-body mt-1 leading-relaxed">
+              Artistas por confirmar. Mantente atento.
+            </p>
+          </motion.div>
         </div>
 
         {/* Spotify embeds */}
-        <div className="space-y-8 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
           <div>
-            <h3 className="font-display font-bold text-lg text-foreground mb-4">🎵 Conoce a los artistas</h3>
-            <div className="bg-card border border-border p-4 rounded-sm">
+            <div className="relative overflow-hidden mb-3 aspect-square">
+              <img src={coverArtistas} alt="Conoce a los artistas" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <h3 className="font-display font-bold text-lg text-foreground mb-3">🎵 Conoce a los artistas</h3>
+            <div className="bg-card border border-border p-3 rounded-sm">
               <iframe
                 title="Conoce a los artistas - Playlist Spotify"
                 src="https://open.spotify.com/embed/playlist/1Zy3LB0vvr5k2S5hqz5tcK?theme=0"
@@ -94,8 +116,11 @@ const ArtistsSection = () => {
             </div>
           </div>
           <div>
-            <h3 className="font-display font-bold text-lg text-foreground mb-4">🔥 Warm up Rizoma</h3>
-            <div className="bg-card border border-border p-4 rounded-sm">
+            <div className="relative overflow-hidden mb-3 aspect-square">
+              <img src={coverWarmup} alt="Warm up Rizoma" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <h3 className="font-display font-bold text-lg text-foreground mb-3">🔥 Warm up Rizoma</h3>
+            <div className="bg-card border border-border p-3 rounded-sm">
               <iframe
                 title="Warm up Rizoma - Playlist Spotify"
                 src="https://open.spotify.com/embed/playlist/4jgcq8MwENRHUjzTPuR1mE?theme=0"
