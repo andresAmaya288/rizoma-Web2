@@ -3,8 +3,6 @@ import { Plus } from "lucide-react";
 import kp530Img from "@/assets/kp530.png";
 import oihanImg from "@/assets/oihan.jpg";
 import lgndImg from "@/assets/lgnd.jpg";
-import coverArtistas from "@/assets/cover-artistas.jpg";
-import coverWarmup from "@/assets/cover-warmup.jpg";
 
 const artists = [
   {
@@ -97,12 +95,9 @@ const ArtistsSection = () => {
         </div>
 
         {/* Spotify embeds */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <div className="space-y-8 max-w-2xl mx-auto">
           <div>
-            <div className="relative overflow-hidden mb-3 aspect-square">
-              <img src={coverArtistas} alt="Conoce a los artistas" className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <h3 className="font-display font-bold text-lg text-foreground mb-3">🎵 Conoce a los artistas</h3>
+            <h3 className="font-display font-bold text-lg text-foreground mb-4">🎵 Conoce a los artistas</h3>
             <div className="bg-card border border-border p-3 rounded-sm">
               <iframe
                 title="Conoce a los artistas - Playlist Spotify"
@@ -116,10 +111,7 @@ const ArtistsSection = () => {
             </div>
           </div>
           <div>
-            <div className="relative overflow-hidden mb-3 aspect-square">
-              <img src={coverWarmup} alt="Warm up Rizoma" className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <h3 className="font-display font-bold text-lg text-foreground mb-3">🔥 Warm up Rizoma</h3>
+            <h3 className="font-display font-bold text-lg text-foreground mb-4">🔥 Warm up Rizoma</h3>
             <div className="bg-card border border-border p-3 rounded-sm">
               <iframe
                 title="Warm up Rizoma - Playlist Spotify"
