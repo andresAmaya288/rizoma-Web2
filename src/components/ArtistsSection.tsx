@@ -1,17 +1,26 @@
 import { motion } from "framer-motion";
 import kp530Img from "@/assets/kp530.png";
 import oihanImg from "@/assets/oihan.jpg";
+import lgndImg from "@/assets/lgnd.jpg";
 
 const artists = [
   {
     name: "KP530",
     bio: "Rap crudo y directo desde las calles. Letras que golpean con la honestidad de quien ha vivido lo que cuenta.",
     image: kp530Img,
+    confirmed: true,
   },
   {
     name: "Oihan",
     bio: "Versos afilados y flow contundente. Una voz que rompe moldes y construye puentes entre lo urbano y lo poético.",
     image: oihanImg,
+    confirmed: true,
+  },
+  {
+    name: "LGND",
+    bio: "Melodías que se te clavan y barras que no piden permiso. Una propuesta fresca donde lo callejero se encuentra con lo melódico.",
+    image: lgndImg,
+    confirmed: false,
   },
 ];
 
@@ -34,7 +43,7 @@ const ArtistsSection = () => {
         </motion.div>
 
         {/* Artist grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16 max-w-3xl mx-auto">
           {artists.map((artist, i) => (
             <motion.div
               key={i}
@@ -52,6 +61,11 @@ const ArtistsSection = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {!artist.confirmed && (
+                  <span className="absolute top-2 right-2 bg-accent/80 text-accent-foreground text-[10px] font-display font-bold uppercase tracking-widest px-2 py-0.5 rounded-sm backdrop-blur-sm border border-accent/40">
+                    Por confirmar
+                  </span>
+                )}
               </div>
               <h3 className="font-display font-bold text-lg text-foreground group-hover:text-primary transition-colors">
                 {artist.name}
