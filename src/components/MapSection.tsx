@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-const MAP_CENTER: [number, number] = [37.1193, -5.4558];
+const MAP_CENTER: [number, number] = [37.120273914533755, -5.460305050967935];
 
 const MapSection = () => {
   const mapRef = useRef<HTMLDivElement>(null);
