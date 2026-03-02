@@ -34,8 +34,8 @@ const MapSection = () => {
       .addTo(map)
       .bindPopup(
         `<div style="font-family:'Space Grotesk',sans-serif;text-align:center;padding:4px">
-          <strong style="font-family:'Syne',sans-serif">CSO Julio Vélez</strong><br/>
-          <span style="font-size:12px;color:#888">Pasaje Ote., Morón de la Frontera</span><br/>
+           <strong style="font-family:'Syne',sans-serif">Módulo Azul</strong><br/>
+           <span style="font-size:12px;color:#888">Pasaje Ote., 41530 Morón de la Frontera</span><br/>
           <a href="https://maps.app.goo.gl/ZKzKJEkDE9WRhbiU8" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:hsl(82 100% 50%)">Abrir en Google Maps →</a>
         </div>`
       );
@@ -62,7 +62,7 @@ const MapSection = () => {
             📍 Cómo llegar
           </h3>
           <p className="text-muted-foreground font-body text-sm mb-4 text-center">
-            CSO Julio Vélez — Pasaje Ote., Morón de la Frontera
+            Módulo Azul — Pasaje Ote., 41530 Morón de la Frontera
           </p>
           <div
             ref={mapRef}
