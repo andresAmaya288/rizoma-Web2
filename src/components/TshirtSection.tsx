@@ -28,11 +28,17 @@ const reservaSchema = z.object({
 
 type FormErrors = Partial<Record<keyof z.infer<typeof reservaSchema>, string>>;
 
+const RATE_LIMIT_MS = 30_000; // 30 seconds between submissions
+
+const sanitize = (str: string) =>
+  str.replace(/[<>"'&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;", "&": "&amp;" }[c] || c));
+
 const TshirtSection = () => {
   const [flipped, setFlipped] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [confirmed, setConfirmed] = useState<string | null>(null);
   const [errors, setErrors] = useState<FormErrors>({});
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
   const [form, setForm] = useState({
     nombre: "",
     email: "",
@@ -51,6 +57,12 @@ const TshirtSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const now = Date.now();
+    if (now - lastSubmitTime < RATE_LIMIT_MS) {
+      toast.error("Espera unos segundos antes de enviar otra reserva.");
+      return;
+    }
+
     const result = reservaSchema.safeParse(form);
     if (!result.success) {
       const fieldErrors: FormErrors = {};
@@ -64,14 +76,15 @@ const TshirtSection = () => {
 
     setErrors({});
     setSubmitting(true);
+    setLastSubmitTime(now);
 
     const formData = {
       timestamp: new Date().toISOString(),
-      model: form.modelo,
-      size: form.talla,
-      quantity: form.cantidad,
-      name: form.nombre,
-      email: form.email,
+      model: sanitize(form.modelo),
+      size: sanitize(form.talla),
+      quantity: sanitize(form.cantidad),
+      name: sanitize(form.nombre),
+      email: sanitize(form.email),
     };
 
     try {
@@ -85,8 +98,7 @@ const TshirtSection = () => {
       setConfirmed(detail);
       toast.success("¡Reserva recibida! Te esperamos en el evento.", { duration: 5000 });
       setForm({ nombre: "", email: "", modelo: models[0].name, talla: "M", cantidad: "1" });
-    } catch (error) {
-      console.error("Error:", error);
+    } catch {
       toast.error("Hubo un error en la reserva. Inténtalo de nuevo.");
     } finally {
       setSubmitting(false);
