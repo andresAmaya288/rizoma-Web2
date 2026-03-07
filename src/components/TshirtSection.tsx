@@ -28,11 +28,17 @@ const reservaSchema = z.object({
 
 type FormErrors = Partial<Record<keyof z.infer<typeof reservaSchema>, string>>;
 
+const RATE_LIMIT_MS = 30_000; // 30 seconds between submissions
+
+const sanitize = (str: string) =>
+  str.replace(/[<>"'&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;", "&": "&amp;" }[c] || c));
+
 const TshirtSection = () => {
   const [flipped, setFlipped] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [confirmed, setConfirmed] = useState<string | null>(null);
   const [errors, setErrors] = useState<FormErrors>({});
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
   const [form, setForm] = useState({
     nombre: "",
     email: "",
