@@ -56,7 +56,7 @@ const Hero = () => {
           <p className="font-display font-semibold text-xl sm:text-2xl md:text-3xl text-foreground/90 tracking-wide uppercase mb-8">
             Fiesta de la Primavera
           </p>
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
