@@ -49,27 +49,27 @@ const MapSection = () => {
   }, []);
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-16 md:py-24">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
           <h3 className="font-display font-bold text-xl sm:text-2xl text-foreground mb-2 text-center">
             📍 Cómo llegar
           </h3>
-          <p className="text-muted-foreground font-body text-sm mb-4 text-center">
+          <p className="text-muted-foreground font-body text-sm mb-6 text-center">
             Módulo Azul — Pasaje Ote., 41530 Morón de la Frontera
           </p>
           <div
             ref={mapRef}
-            className="w-full h-[220px] sm:h-[280px] border border-border overflow-hidden"
+            className="w-full h-[280px] sm:h-[380px] border border-border overflow-hidden"
             style={{ borderRadius: "var(--radius)" }}
           />
-          <p className="text-center mt-3">
+          <p className="text-center mt-4">
             <a
               href="https://maps.app.goo.gl/ZKzKJEkDE9WRhbiU8"
               target="_blank"
