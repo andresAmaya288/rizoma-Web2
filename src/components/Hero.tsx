@@ -2,11 +2,27 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 
+const letterVariants = {
+  hidden: { opacity: 0, y: 40, rotateX: -90 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    transition: {
+      duration: 0.6,
+      delay: 0.3 + i * 0.08,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+    },
+  }),
+};
+
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  const letters = "RIZOMA".split("");
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden noise-overlay">
@@ -22,18 +38,25 @@ const Hero = () => {
       </motion.div>
 
       <motion.div className="relative z-10 container mx-auto px-6 text-center" style={{ opacity }}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <h1 className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.85] mb-4">
-            <span className="gradient-text">RIZOMA</span>
+        <div>
+          <h1 className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.85] mb-4 flex justify-center overflow-hidden" style={{ perspective: "600px" }}>
+            {letters.map((letter, i) => (
+              <motion.span
+                key={i}
+                custom={i}
+                variants={letterVariants}
+                initial="hidden"
+                animate="visible"
+                className="gradient-text inline-block"
+              >
+                {letter}
+              </motion.span>
+            ))}
           </h1>
           <p className="font-display font-semibold text-xl sm:text-2xl md:text-3xl text-foreground/90 tracking-wide uppercase mb-8">
             Fiesta de la Primavera
           </p>
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}

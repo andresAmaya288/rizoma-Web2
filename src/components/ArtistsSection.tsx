@@ -41,7 +41,7 @@ const ArtistsSection = () => {
         </motion.div>
 
         {/* Artist grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8 mb-16 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
           {artists.map((artist, i) => (
             <motion.div
               key={i}
@@ -55,7 +55,7 @@ const ArtistsSection = () => {
                 <img
                   src={artist.image}
                   alt={artist.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover grayscale sm:grayscale sm:group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -92,38 +92,6 @@ const ArtistsSection = () => {
               Artistas por confirmar. Mantente atento.
             </p>
           </motion.div>
-        </div>
-
-        {/* Spotify embeds */}
-        <div className="space-y-8 max-w-2xl mx-auto">
-          <div>
-            <h3 className="font-display font-bold text-lg text-foreground mb-4">🎵 Conoce a los artistas</h3>
-            <div className="bg-card border border-border p-3 rounded-sm">
-              <iframe
-                title="Conoce a los artistas - Playlist Spotify"
-                src="https://open.spotify.com/embed/playlist/1Zy3LB0vvr5k2S5hqz5tcK?theme=0"
-                width="100%"
-                height="152"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                className="rounded-sm"
-              />
-            </div>
-          </div>
-          <div>
-            <h3 className="font-display font-bold text-lg text-foreground mb-4">🔥 Warm up Rizoma</h3>
-            <div className="bg-card border border-border p-3 rounded-sm">
-              <iframe
-                title="Warm up Rizoma - Playlist Spotify"
-                src="https://open.spotify.com/embed/playlist/4jgcq8MwENRHUjzTPuR1mE?theme=0"
-                width="100%"
-                height="152"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                className="rounded-sm"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>

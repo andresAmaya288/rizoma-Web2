@@ -4,15 +4,16 @@ import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import EventSection from "@/components/EventSection";
 import ArtistsSection from "@/components/ArtistsSection";
+import PlaylistSection from "@/components/PlaylistSection";
 import MapSection from "@/components/MapSection";
 import TshirtSection from "@/components/TshirtSection";
 import FooterSection from "@/components/FooterSection";
+import SectionDivider from "@/components/SectionDivider";
 
 const navLinks = [
   { label: "Quiénes somos", href: "#sobre" },
   { label: "Evento", href: "#evento" },
   { label: "Artistas", href: "#artistas" },
-  // { label: "Camisetas", href: "#camisetas" },
 ];
 
 const Index = () => {
@@ -45,7 +46,7 @@ const Index = () => {
               href="#evento"
               className="font-body text-xs font-medium bg-primary text-primary-foreground px-4 py-2 uppercase tracking-wider hover:shadow-[0_0_20px_hsl(82_100%_50%/0.3)] transition-all"
             >
-              Quiero ir
+              Quiero venir
             </a>
 
             {/* Hamburger button - mobile only */}
@@ -98,11 +99,17 @@ const Index = () => {
       </nav>
 
       <Hero />
+      <SectionDivider />
       <AboutSection />
+      <SectionDivider flip />
       <EventSection />
+      <SectionDivider />
       <ArtistsSection />
+      <SectionDivider flip />
+      <PlaylistSection />
+      <SectionDivider />
       <MapSection />
-      {/* TshirtSection oculta temporalmente — descomentar para activar */}
+      {/* TshirtSection oculta temporalmente */}
       {/* <TshirtSection /> */}
       <FooterSection />
     </main>
