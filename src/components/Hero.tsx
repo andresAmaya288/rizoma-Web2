@@ -71,7 +71,7 @@ const Hero = () => {
             href="#evento"
             className="inline-block font-display font-bold text-lg px-10 py-4 bg-primary text-primary-foreground hover:shadow-[0_0_30px_hsl(82_100%_50%/0.4)] transition-all duration-300 tracking-wider uppercase"
           >
-            Quiero venir
+            Quiero ir
           </a>
         </motion.div>
       </motion.div>

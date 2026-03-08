@@ -46,7 +46,7 @@ const Index = () => {
               href="#evento"
               className="font-body text-xs font-medium bg-primary text-primary-foreground px-4 py-2 uppercase tracking-wider hover:shadow-[0_0_20px_hsl(82_100%_50%/0.3)] transition-all"
             >
-              Quiero venir
+              Quiero ir
             </a>
 
             {/* Hamburger button - mobile only */}
