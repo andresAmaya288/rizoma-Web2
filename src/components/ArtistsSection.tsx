@@ -47,7 +47,7 @@ const ArtistsSection = () => {
         </motion.div>
 
         {/* Artist grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto">
           {artists.map((artist, i) => (
             <motion.div
               key={i}
