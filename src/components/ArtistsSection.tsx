@@ -47,7 +47,7 @@ const ArtistsSection = () => {
         </motion.div>
 
         {/* Artist grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto justify-items-center">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-3xl mx-auto [&>*]:w-[calc(50%-12px)] sm:[&>*]:w-[calc(33.333%-22px)]">
           {artists.map((artist, i) => (
             <motion.div
               key={i}
