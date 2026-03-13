@@ -3,6 +3,7 @@ import { Plus } from "lucide-react";
 import kp530Img from "@/assets/kp530.png";
 import oihanImg from "@/assets/oihan.jpg";
 import lgndImg from "@/assets/lgnd.jpg";
+import dinnoImg from "@/assets/dinno.jpg";
 
 const artists = [
   {
@@ -19,6 +20,11 @@ const artists = [
     name: "LGND",
     bio: "Melodías que se te clavan y barras que no piden permiso. Una propuesta fresca donde lo callejero se encuentra con lo melódico.",
     image: lgndImg,
+  },
+  {
+    name: "Dinno",
+    bio: "Energía pura sobre el escenario. Un directo que atrapa desde el primer compás y no suelta hasta el último verso.",
+    image: dinnoImg,
   },
 ];
 
