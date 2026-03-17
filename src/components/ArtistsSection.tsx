@@ -8,22 +8,22 @@ import dinnoImg from "@/assets/dinno.jpg";
 const artists = [
   {
     name: "KP530",
-    bio: "Rap crudo y directo desde las calles. Letras que golpean con la honestidad de quien ha vivido lo que cuenta.",
+    bio: "Rap con raíz y sentido de pertenencia. En su último disco Cerca del Castillo, KP530 firma un debut honesto y variado que viaja del boombap clásico a sonidos más actuales, construyendo identidad propia sin olvidar de dónde viene.",
     image: kp530Img,
   },
   {
     name: "Oihan",
-    bio: "Versos afilados y flow contundente. Una voz que rompe moldes y construye puentes entre lo urbano y lo poético.",
+    bio: "Sensibilidad a flor de piel y un cuidado extremo por cada palabra. Oihan levanta canciones donde la poesía se mezcla con melodías delicadas, creando un universo íntimo que conecta desde la primera escucha.",
     image: oihanImg,
   },
   {
     name: "LGND",
-    bio: "Melodías que se te clavan y barras que no piden permiso. Una propuesta fresca donde lo callejero se encuentra con lo melódico.",
+    bio: "Explorando siempre nuevos sonidos con los que jugar. LGND cruza barras y emoción en una propuesta inquieta y fresca, pensada para quienes buscan vibrar fuera de lo predecible.",
     image: lgndImg,
   },
   {
     name: "Dinno",
-    bio: "Energía pura sobre el escenario. Un directo que atrapa desde el primer compás y no suelta hasta el último verso.",
+    bio: "Sensibilidad en estado puro y canciones que respiran calma. Dinno se mueve entre el bedroom pop y los paisajes lofi, dejando entrar guitarras y texturas acústicas en una propuesta íntima, honesta y fácil de sentir.",
     image: dinnoImg,
   },
 ];
