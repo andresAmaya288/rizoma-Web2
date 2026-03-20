@@ -4,6 +4,7 @@ import kp530Img from "@/assets/kp530.png";
 import oihanImg from "@/assets/oihan.jpg";
 import lgndImg from "@/assets/lgnd.jpg";
 import dinnoImg from "@/assets/dinno.jpg";
+import omariImg from "@/assets/omari-newhood.jpg";
 
 const artists = [
   {
