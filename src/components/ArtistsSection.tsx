@@ -27,6 +27,11 @@ const artists = [
     bio: "Bedroom pop y lofi con alma acústica en una propuesta sensible, calmada y fácil de sentir.",
     image: dinnoImg,
   },
+  {
+    name: "Omari NewHood & Labs.lo",
+    bio: "Sonidos urbanos frescos. En su última propuesta In Another Life exploran texturas que van del perreo al R&B con una vibra cuidada y actual.",
+    image: omariImg,
+  },
 ];
 
 const ArtistsSection = () => {
