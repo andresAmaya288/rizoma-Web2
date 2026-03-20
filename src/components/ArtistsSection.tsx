@@ -4,6 +4,7 @@ import kp530Img from "@/assets/kp530.png";
 import oihanImg from "@/assets/oihan.jpg";
 import lgndImg from "@/assets/lgnd.jpg";
 import dinnoImg from "@/assets/dinno.jpg";
+import omariImg from "@/assets/omari-newhood.jpg";
 
 const artists = [
   {
@@ -25,6 +26,11 @@ const artists = [
     name: "Dinno",
     bio: "Bedroom pop y lofi con alma acústica en una propuesta sensible, calmada y fácil de sentir.",
     image: dinnoImg,
+  },
+  {
+    name: "Omari NewHood & Labs.lo",
+    bio: "Sonidos urbanos frescos. En su última propuesta In Another Life exploran texturas que van del perreo al R&B con una vibra cuidada y actual.",
+    image: omariImg,
   },
 ];
 
