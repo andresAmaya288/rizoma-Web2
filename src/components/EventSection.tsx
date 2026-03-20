@@ -5,7 +5,6 @@ const schedule = [
   { time: "Todo el día", event: "Mercadillo local", icon: "🛍️" },
   { time: "Tarde / Noche", event: "Actuaciones en vivo", icon: "🎤" },
   { time: "Noche", event: "DJs", icon: "🎧" },
-  { time: "Momento destacado", event: "Micro abierto de poesía", icon: "✍️" },
 ];
 
 const EventSection = () => {
