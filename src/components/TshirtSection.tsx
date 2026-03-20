@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { z } from "zod";
 
-import tshirt1Front from "@/assets/tshirt-1-front.jpg";
-import tshirt1Back from "@/assets/tshirt-1-back.jpg";
-import tshirt2Front from "@/assets/tshirt-2-front.jpg";
-import tshirt2Back from "@/assets/tshirt-2-back.jpg";
-import tshirt3Front from "@/assets/tshirt-3-front.jpg";
-import tshirt3Back from "@/assets/tshirt-3-back.jpg";
+import tshirt1Front from "@/assets/tshirt-1-front.webp";
+import tshirt1Back from "@/assets/tshirt-1-back.webp";
+import tshirt2Front from "@/assets/tshirt-2-front.webp";
+import tshirt2Back from "@/assets/tshirt-2-back.webp";
+import tshirt3Front from "@/assets/tshirt-3-front.webp";
+import tshirt3Back from "@/assets/tshirt-3-back.webp";
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcc_LD_RocJjCD1q5VW8ceKsKkyF5iDM2mEpdseqSrktC1Z5iY4BtTeMPzMqsVsdI/exec";
 
