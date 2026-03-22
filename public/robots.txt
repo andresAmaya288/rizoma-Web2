@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://rizoma-moron.lovable.app/sitemap.xml
+Sitemap: https://rizoma-moron.com/sitemap.xml
