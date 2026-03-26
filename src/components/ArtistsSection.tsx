@@ -87,29 +87,6 @@ const ArtistsSection = () => {
             </motion.div>
           ))}
 
-          {/* Coming soon card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: artists.length * 0.15 }}
-            className="group"
-          >
-            <div className="relative overflow-hidden mb-4 aspect-square border border-dashed border-primary/30 flex flex-col items-center justify-center bg-card/30 backdrop-blur-sm">
-              <div className="w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center mb-3 group-hover:border-primary/70 transition-colors">
-                <Plus className="w-6 h-6 text-primary/60 group-hover:text-primary transition-colors" />
-              </div>
-              <span className="font-display font-bold text-sm text-primary/60 group-hover:text-primary transition-colors tracking-wide uppercase">
-                Próximamente
-              </span>
-            </div>
-            <h3 className="font-display font-bold text-lg text-muted-foreground/50">
-              Y más…
-            </h3>
-            <p className="text-muted-foreground/40 text-sm font-body mt-1 leading-relaxed">
-              Artistas por confirmar. Mantente atento.
-            </p>
-          </motion.div>
         </div>
       </div>
     </section>
