@@ -33,6 +33,11 @@ const artists = [
     bio: "Sonidos urbanos frescos. En su última propuesta In Another Life exploran texturas que van del perreo al R&B con una vibra cuidada y actual.",
     image: omariImg,
   },
+  {
+    name: "Ronda530",
+    bio: "Trap y drill en estado puro. Ronda530 trae barras enérgicas y bases contundentes en una propuesta directa y sin filtros.",
+    image: ronda530Img,
+  },
 ];
 
 const ArtistsSection = () => {
