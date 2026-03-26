@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Plus } from "lucide-react";
+
 import kp530Img from "@/assets/kp530.webp";
 import oihanImg from "@/assets/oihan.webp";
 import lgndImg from "@/assets/lgnd.webp";
