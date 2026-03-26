@@ -5,6 +5,7 @@ import oihanImg from "@/assets/oihan.webp";
 import lgndImg from "@/assets/lgnd.webp";
 import dinnoImg from "@/assets/dinno.webp";
 import omariImg from "@/assets/omari-newhood.webp";
+import ronda530Img from "@/assets/ronda530.webp";
 
 const artists = [
   {
