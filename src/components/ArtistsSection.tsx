@@ -5,6 +5,7 @@ import oihanImg from "@/assets/oihan.webp";
 import lgndImg from "@/assets/lgnd.webp";
 import dinnoImg from "@/assets/dinno.webp";
 import omariImg from "@/assets/omari-newhood.webp";
+import ronda530Img from "@/assets/ronda530.webp";
 
 const artists = [
   {
@@ -31,6 +32,11 @@ const artists = [
     name: "Omari NewHood & Labs.lo",
     bio: "Sonidos urbanos frescos. En su última propuesta In Another Life exploran texturas que van del perreo al R&B con una vibra cuidada y actual.",
     image: omariImg,
+  },
+  {
+    name: "Ronda530",
+    bio: "Trap y drill en estado puro. Ronda530 trae barras enérgicas y bases contundentes en una propuesta directa y sin filtros.",
+    image: ronda530Img,
   },
 ];
 
