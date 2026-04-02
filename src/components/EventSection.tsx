@@ -3,7 +3,11 @@ import { useRef, useState } from "react";
 
 const schedule = [
   { time: "Todo el día", event: "Mercadillo local", icon: "🛍️" },
-  { time: "Tarde / Noche", event: "Actuaciones en vivo", icon: "🎤" },
+  { time: "18:30 - 19:00", event: "Ronda530", icon: "🎤" },
+  { time: "19:00 - 19:30", event: "Omari NewHood & Labs.lo", icon: "🎤" },
+  { time: "19:30 - 20:00", event: "Oihan & Dinno", icon: "🎤" },
+  { time: "20:00 - 20:20", event: "LGND", icon: "🎤" },
+  { time: "20:20 - 21:00", event: "KP530", icon: "🎤" },
   { time: "Noche", event: "DJs", icon: "🎧" },
 ];
 
